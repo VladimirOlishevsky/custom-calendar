@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+<h1 align="center">Date and Week Picker</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="./assets/datepicker.gif" width="100%">
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+The Calendar was created using technology: <a href="https://material-ui.com/">Material-Ui</a>, <a href="https://day.js.org/">Dayjs</a>, <a href="https://storybook.js.org/">Storybook</a>. It currently starts at 1.09 because it was created for students whose school year starts at 1.09, but you can change the date as you see fit (look for TODO). Also you can look week number from start of custom year. Enjoy it :)
 
-### `yarn start`
+## Where to begin:
+- Clone the repository https://github.com/VladimirOlishevsky/custom-calendar.git
+- Set ```yarn``` dependencies
+- Start a ```yarn storybook``` project.
+- Choose in storybook panel DatePicker or WeekPicker 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Working with the project:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The ```DatePicker```:
+- the background color of your current day is always tinted
+- you can choose another day
+- you can navigate between days and months using chevrons
+- chevrons are disabled at the end of the calendar year (you can change this)
+- Sunday is colored red
+- a date not in the current month is displayed in gray
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The ```WeekPicker```:
+- current week always have border
+- you can choose another week
+- you can navigate between weeks using chevrons
+- you can always look selected week in topside 
+- when you press the "Today" button, the week will be selected as the current one.

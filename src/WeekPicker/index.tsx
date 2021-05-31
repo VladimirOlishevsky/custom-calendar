@@ -4,7 +4,6 @@ import {
 import { PopperPlacementType } from '@material-ui/core/Popper';
 import clsx from 'clsx';
 import dayjs, { Dayjs } from 'dayjs';
-import { observer } from 'mobx-react-lite';
 import React, { useState } from 'react';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
@@ -15,7 +14,7 @@ import { WeekItem } from './WeekItem';
 import { getCalendarDates, getWeekEnd, getWeekStart, nextMonthClick, prevMonthClick } from '../__utils__';
 
 
-export const WeekPicker = observer(() => {
+export const WeekPicker = () => {
   const beginYear = dayjs('09-01-2020'); // TODO - use correct data from props
   const endYear = dayjs('08-31-2021'); // TODO - use correct data from props
 
@@ -119,4 +118,4 @@ export const WeekPicker = observer(() => {
       ) : null}
     </div>
   );
-});
+};
