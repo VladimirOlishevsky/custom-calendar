@@ -18,6 +18,9 @@ export const getStyles = makeStyles((theme) => ({
     fontWeight: theme.typography.fontWeightBold,
     textAlign: 'center',
   },
+  month: {
+    textTransform: 'capitalize'
+  },
   year: {
     color: '#7B819B',
     fontSize: theme.typography.caption.fontSize,

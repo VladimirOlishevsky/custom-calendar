@@ -1,35 +1,37 @@
 import React, { Fragment } from 'react';
 import { Grid, Typography } from '@material-ui/core';
-import dayjs from 'dayjs';
 import clsx from 'clsx';
 
-import { DatePickerHeader } from '../DatePickerHeader';
+import { PickerHeader } from '../../PickerHeader';
 import { DatePickerCell } from '../DatePickerCell';
 import { weekdays } from '../constants';
 import { IDatePickerBody } from '../types';
-import { getCalendarDates, getWeekNumberFromStartOfPeriod, isFirstCell, nextMonthClick, prevMonthClick } from '../../__utils__';
+import { getCalendarDates, getWeekNumberFromStartOfPeriod, isFirstCell } from '../../__utils__';
 import { getStyles } from './styles';
 
 
 export const DatePickerBody = ({
   currentMonth,
   setCurrentMonth,
+  setSelectedCell,
   onClickSelected,
   selectedCell,
   beginYear,
   endYear,
+  disabledHeader
 }: IDatePickerBody) => {
   const classes = getStyles();
 
   return (
     <Grid className={classes.root}>
-      <DatePickerHeader
-        prevMonthClick={() => prevMonthClick(currentMonth, setCurrentMonth)}
-        nextMonthClick={() => nextMonthClick(currentMonth, setCurrentMonth)}
+      <PickerHeader
+        setCurrentMonth={setCurrentMonth}
+        setSelectedCell={setSelectedCell}
         currentMonth={currentMonth}
         isDatePicker
         beginYear={beginYear}
         endYear={endYear}
+        disabledHeader={disabledHeader}
       />
       <Grid className={classes.calendarRoot}>
         <Grid></Grid>
@@ -45,20 +47,19 @@ export const DatePickerBody = ({
         ))}
         {getCalendarDates(currentMonth).map((date, index) => (
           <Fragment
-            key={date}
+            key={String(date)}
           >
             {isFirstCell(index)
               && (
                 <Typography
                   className={classes.weekNumbers}
                 >
-                  {getWeekNumberFromStartOfPeriod(beginYear!, dayjs(date))}
+                  {getWeekNumberFromStartOfPeriod(beginYear!, date)}
                 </Typography>
               )}
             <DatePickerCell
               cellDate={date}
-              key={date}
-              onClickSelected={() => onClickSelected(index, dayjs(date))}
+              onClickSelected={() => onClickSelected(index, date)}
               isSelected={Boolean(index === selectedCell)}
               currentMonth={currentMonth}
             />

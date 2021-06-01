@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Grid, Typography } from '@material-ui/core';
-import dayjs from 'dayjs';
+import { ButtonBase, Typography } from '@material-ui/core';
 
 import { getStyles } from './styles';
 import { IWeekItem } from '../types';
@@ -22,21 +21,19 @@ export const WeekItem = ({
   const currentWeek = isCurrentWeek(startOfWeek, startOfCurrentWeek);
 
   return (
-    <Grid
-      item
+    <ButtonBase
       onClick={onClickSelected}
       className={clsx(
         classes.week,
-        currentWeek && classes.weekSelected,
-        isSelected && classes.weekSelected,
+        (currentWeek || isSelected) && classes.weekSelected,
       )}
     >
       <Typography className={classes.weekPeriod}>
         {`${weekStart} - ${weekEnd}`}
       </Typography>
       <Typography className={classes.weekNumber}>
-        {`${getWeekNumberFromStartOfPeriod(beginYear, dayjs(startOfWeek))} week`}
+        {`${getWeekNumberFromStartOfPeriod(beginYear, startOfWeek)} week`}
       </Typography>
-    </Grid>
+    </ButtonBase>
   );
 };

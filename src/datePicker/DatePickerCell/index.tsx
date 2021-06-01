@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Grid, Button } from '@material-ui/core';
-import dayjs from 'dayjs';
 
 import { getStyles } from './styles';
 import { IDatePickerCell } from '../types';
@@ -15,11 +14,11 @@ export const DatePickerCell = ({
 }: IDatePickerCell) => {
   const classes = getStyles();
 
-  const isSunday = 0 === dayjs(cellDate).get('day');
-  const isToday = dayjs(cellDate).isToday();
+  const isSunday = 0 === cellDate.get('day');
+  const isToday = cellDate.isToday();
 
-  const notInCurrentMonth = dayjs(cellDate).isBefore(dayjs(currentMonth).startOf('month'))
-    || (dayjs(cellDate).isAfter(dayjs(currentMonth).endOf('month')) && !isSunday);
+  const notInCurrentMonth = cellDate.isBefore(currentMonth.startOf('month'))
+    || (cellDate.isAfter(currentMonth.endOf('month')) && !isSunday);
 
   return (
     <Grid
@@ -37,7 +36,7 @@ export const DatePickerCell = ({
         )}
         onClick={onClickSelected}
       >
-        {new Date(cellDate).getDate()}
+        {cellDate.get('date')}
       </Button>
     </Grid>
   );

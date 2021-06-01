@@ -34,6 +34,7 @@ export const getStyles = makeStyles((theme) => ({
   },
   today: {
     color: (props: IProps) => (props.isToday ? '#0055CB' : theme.palette.common.black),
+    textTransform: 'capitalize'
   },
   monthDate: {
     color: (props: IProps) => (props.isToday ? 'rgba(17, 85, 203, 0.4)' : '#7B819B'),

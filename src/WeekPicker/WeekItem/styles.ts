@@ -3,6 +3,7 @@ import { weekBorderRadius, weekHeight } from '../constants';
 
 export const getStyles = makeStyles(theme => ({
   week: {
+    width: '100%',
     padding: theme.spacing(0, 3),
     height: weekHeight,
     borderRadius: weekBorderRadius,
